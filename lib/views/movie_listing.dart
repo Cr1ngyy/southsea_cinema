@@ -16,12 +16,18 @@ class MovieListing extends StatelessWidget {
       ),
       drawer: const NavDrawer(),
       body: Container(
-        
-
-
-
-        child: const Text("Sinners", textScaler: TextScaler.linear(3)),
-        
+        padding: EdgeInsets.all(15),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text("Sinners  (2025)   (15+)", style: TextStyle(fontSize: 30)),
+            SizedBox(
+              height: 25,
+            ),
+            Text("Starring Michael B. Jordan"),
+            Text("Directed by Ryan Coogler")
+          ],
+        ),
       ),
     );
   }
