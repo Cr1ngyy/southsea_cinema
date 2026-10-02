@@ -24,9 +24,30 @@ class MovieListing extends StatelessWidget {
             SizedBox(
               height: 25,
             ),
-            Text("Starring Michael B. Jordan"),
-            Text("Directed by Ryan Coogler"),
-            TicketOrderSystem()
+            Text(
+              "Southsea Cinema Room",
+              style: TextStyle(fontSize: 16),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Text("Thursday 27 Oct 2026, 20:00 - ends at 22:05"),
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+                "Please not that Discounts / Membership Benefits will be applied once you have selected your tickets"),
+            SizedBox(
+              height: 10,
+            ),
+            Text("Select Quantities (up to a total 5)"),
+            SizedBox(
+              height: 25,
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 0),
+              child: TicketOrderSystem(),
+            ),
           ],
         ),
       ),
@@ -56,21 +77,36 @@ class _TicketOrderSystem extends State<TicketOrderSystem> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            DropdownMenu<int>(
-                onSelected: (value) {
-                  if (value != null) {
-                    ticketQuantity = value;
-                  }
-                },
-                dropdownMenuEntries: [
-                  DropdownMenuEntry(value: 1, label: '1'),
-                  DropdownMenuEntry(value: 2, label: '2'),
-                  DropdownMenuEntry(value: 3, label: '3'),
-                  DropdownMenuEntry(value: 4, label: '4')
-                ]),
+            Row(
+              children: [
+                DropdownMenu<int>(
+                    onSelected: (value) {
+                      if (value != null) {
+                        ticketQuantity = value;
+                      }
+                    },
+                    dropdownMenuEntries: [
+                      DropdownMenuEntry(value: 1, label: '1'),
+                      DropdownMenuEntry(value: 2, label: '2'),
+                      DropdownMenuEntry(value: 3, label: '3'),
+                      DropdownMenuEntry(value: 4, label: '4'),
+                      DropdownMenuEntry(value: 5, label: '5')
+                    ]),
+                SizedBox(
+                  width: 10,
+                ),
+                Text("Adult (£8.00)")
+              ],
+            ),
+            SizedBox(
+              height: 20,
+            ),
             ElevatedButton(
               onPressed: _orderTickets,
-              child: const Text("ORDER TICKETS"),
+              child: const Text("Order Ticket(s)"),
+              style: ElevatedButton.styleFrom(
+                  shape:
+                      RoundedRectangleBorder(borderRadius: BorderRadius.zero)),
             ),
             Text("Total tickets sold: $totalTickets")
           ],
@@ -78,7 +114,7 @@ class _TicketOrderSystem extends State<TicketOrderSystem> {
   }
 
   void _orderTickets() {
-    if (ticketQuantity < widget.maxTicketOrder) {
+    if (ticketQuantity <= widget.maxTicketOrder) {
       setState(() {
         totalTickets += ticketQuantity;
       });
