@@ -100,10 +100,10 @@ class _TicketOrderSystem extends State<TicketOrderSystem> {
             ),
             ElevatedButton(
               onPressed: _orderTickets,
-              child: const Text("Order Ticket(s)"),
               style: ElevatedButton.styleFrom(
                   shape:
                       RoundedRectangleBorder(borderRadius: BorderRadius.zero)),
+              child: const Text("Order Ticket(s)"),
             ),
             Text("Total tickets sold: $totalTickets")
           ],
