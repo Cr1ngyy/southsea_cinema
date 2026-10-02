@@ -44,10 +44,7 @@ class MovieListing extends StatelessWidget {
             SizedBox(
               height: 25,
             ),
-            Padding(
-              padding: EdgeInsets.only(left: 0),
-              child: TicketOrderSystem(),
-            ),
+            TicketOrderSystem()
           ],
         ),
       ),
