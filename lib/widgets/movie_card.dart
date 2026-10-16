@@ -11,7 +11,7 @@ import 'package:southsea_cinema/constants.dart';
   Widget build(BuildContext context) {
     return Card(
       margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-      color: cinemaBackground,
+      color: const Color.fromARGB(255, 26, 32, 50),
       child: Padding(padding: EdgeInsets.all(16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -57,7 +57,7 @@ import 'package:southsea_cinema/constants.dart';
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                 )),
-                ElevatedButton(onPressed: () {print('Booked')}, child: const Text('BOOK NOW'),
+                ElevatedButton(onPressed: () {print('Booked');}, child: const Text('BOOK NOW'),
                 ),
             ],
           )
