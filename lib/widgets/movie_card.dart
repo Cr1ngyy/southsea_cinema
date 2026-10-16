@@ -34,6 +34,7 @@ import 'package:southsea_cinema/constants.dart';
                       movie.title,
                       style: const TextStyle(
                         fontSize: 18,
+                        color: cinemaBrand,
                         fontWeight: FontWeight.bold,
                       )
                     ),
