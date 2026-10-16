@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/widgets/nav_drawer.dart';
+import 'package:southsea_cinema/widgets/movie_card.dart';
+import 'package:southsea_cinema/models/movie.dart';
 
 class MovieListing extends StatelessWidget {
-  const MovieListing({super.key});
+  final Movie movie;
+  
+  
+  const MovieListing({super.key, required this.movie});
+
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +26,7 @@ class MovieListing extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Sinners  (2025)   (15+)", style: TextStyle(fontSize: 30)),
+            Text("${movie.title}} ${movie.age}", style: TextStyle(fontSize: 30)),
             SizedBox(
               height: 25,
             ),
@@ -54,8 +60,9 @@ class MovieListing extends StatelessWidget {
 
 class TicketOrderSystem extends StatefulWidget {
   final int maxTicketOrder;
+  final Movie movie;
 
-  const TicketOrderSystem({super.key, this.maxTicketOrder = 5});
+  const TicketOrderSystem({super.key,required this.movie,this.maxTicketOrder = 5});
 
   @override
   State<StatefulWidget> createState() {
