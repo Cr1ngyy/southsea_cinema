@@ -60,9 +60,8 @@ class MovieListing extends StatelessWidget {
 
 class TicketOrderSystem extends StatefulWidget {
   final int maxTicketOrder;
-  final Movie movie;
 
-  const TicketOrderSystem({super.key,required this.movie,this.maxTicketOrder = 5});
+  const TicketOrderSystem({super.key, this.maxTicketOrder = 5});
 
   @override
   State<StatefulWidget> createState() {
