@@ -7,4 +7,13 @@ class MovieRepository {
       Movie(id: 'walle', title: 'Wall-e', synopsis: 'Robotic Adventure set in the far future', age: 'PG', runtime: '1hrs 30m', ticketPrice: 5, posterPath: 'assets/images/walle.jpg')
     ];
   }
+
+  Movie? getMovieById(String id) {
+    for (final movie in getMovies()) {
+    if (movie.id == id) {
+      return movie;
+      }
+    }
+    return null;
+  }
 }
