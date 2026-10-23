@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/widgets/nav_drawer.dart';
+import 'package:southsea_cinema/models/movie.dart';
 
 class MovieListing extends StatelessWidget {
-  const MovieListing({super.key});
+  final Movie movie;
+
+  const MovieListing({super.key, required this.movie});
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +23,15 @@ class MovieListing extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Sinners  (2025)   (15+)", style: TextStyle(fontSize: 30)),
+            Text("${movie.title} (${movie.age})", style: TextStyle(fontSize: 30)),
             SizedBox(
               height: 25,
+            ),
+            Image.asset(
+              movie.posterPath,
+              width: 80,
+              height: 120,
+              fit: BoxFit.cover,
             ),
             Text(
               "Southsea Cinema Room",
@@ -40,7 +49,7 @@ class MovieListing extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
-            Text("Select Quantities (up to a total 5)"),
+            Text(movie.formattedPrice),
             SizedBox(
               height: 25,
             ),
@@ -92,7 +101,7 @@ class _TicketOrderSystem extends State<TicketOrderSystem> {
                 SizedBox(
                   width: 10,
                 ),
-                Text("Adult (£8.00)")
+                Text('test')
               ],
             ),
             SizedBox(
