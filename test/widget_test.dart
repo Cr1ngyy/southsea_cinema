@@ -1,9 +1,16 @@
+// import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:southsea_cinema/main.dart';
+// import 'package:southsea_cinema/models/movie.dart';
+import 'package:southsea_cinema/screens/menu_screen.dart';
 
-void main() {
-  testWidgets('Basic app loading test', (WidgetTester tester) async {
-    await tester.pumpWidget(const SouthseaCinemaApp());
-    expect(find.text('Welcome to Southsea Cinema'), findsOneWidget);
+void main () {
+  group('App tests', () {
+    testWidgets('App displays screens', (WidgetTester tester) async {
+      await tester.pumpWidget(const SouthseaCinemaApp());
+
+      expect(find.byType(MenuScreen), findsOneWidget);
+      expect(find.text('Southsea Cinema'), findsOneWidget);
+    });
   });
 }

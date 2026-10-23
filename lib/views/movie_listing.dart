@@ -23,7 +23,8 @@ class MovieListing extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("${movie.title} (${movie.age})", style: TextStyle(fontSize: 30)),
+            Text("${movie.title} (${movie.age})",
+                style: TextStyle(fontSize: 30)),
             SizedBox(
               height: 25,
             ),

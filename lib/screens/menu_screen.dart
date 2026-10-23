@@ -4,7 +4,7 @@ import 'package:southsea_cinema/models/movie.dart';
 import 'package:southsea_cinema/repositories/movie_repository.dart';
 import 'package:southsea_cinema/widgets/movie_card.dart';
 
-class MenuScreen extends StatelessWidget{
+class MenuScreen extends StatelessWidget {
   const MenuScreen({super.key});
 
   @override
@@ -14,7 +14,10 @@ class MenuScreen extends StatelessWidget{
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Southsea Cinema', style: TextStyle(color: cinemaBrand),),
+        title: const Text(
+          'Southsea Cinema',
+          style: TextStyle(color: cinemaBrand),
+        ),
       ),
       body: ListView.builder(
         itemCount: movies.length,
@@ -23,6 +26,5 @@ class MenuScreen extends StatelessWidget{
         },
       ),
     );
-    }
-
+  }
 }
