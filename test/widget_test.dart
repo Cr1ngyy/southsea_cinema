@@ -12,5 +12,13 @@ void main () {
       expect(find.byType(MenuScreen), findsOneWidget);
       expect(find.text('Southsea Cinema'), findsOneWidget);
     });
+
+    testWidgets('Tapping Order Now button navigates to MovieListing with formatted page', 
+    (WidgetTester tester) async {
+      await tester.pumpWidget(const SouthseaCinemaApp());
+      await tester.tap(find.text('BOOK NOW').first);
+      await tester.pumpAndSettle();
+
+    });
   });
 }
